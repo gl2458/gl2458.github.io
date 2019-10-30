@@ -6,8 +6,11 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
-# rachel 
+#Introduction
+
+Name: Rachel L.
+Email: gl2458@cumc.columbia.edu
+Summary: Biostatistics MPH candidate at Mailman School of Public Health. Interests include data science, statistical inference and analysis. 
 
