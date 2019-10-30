@@ -1,6 +1,45 @@
 ---
-title: "About"
-output: html_document
+title: "About Rachel L."
+output: 
+  html_document:
+    toc: false
+    toc_float: false
+    theme: cerulean
 ---
 
-I am Rachel Lee 
+## Education
+
+
+### Mailman School of Public Health at Columbia University, New York, NY
+
+Master of Public Health, Biostatistics with a certificate in Advanced Epidemiology | May 2020 (Expected)
+
+
+## Professional Experience
+
+
+### GE Healthcare, Seoul, South Korea
+
+MRI Research Associate | Jul 2015 – Jan 2016
+
+o	Conducted (2) quantitative brain MRI projects at (2) hospitals and performed data collection, management, and analysis
+
+o	Composed full reports for senior scientists and radiologists
+
+o	Authored (4) educational materials on introductory MRI physics for employee trainings
+
+o	Supported clients with image post-processing and data management workflow at (3) hospitals
+
+
+## Research Experience
+
+
+### Brown University, Providence, RI
+
+Student Researcher | Jan 2016 – May 2017
+
+Thesis: Extracting Short – Fragmented DNA from Human Blood Serum Samples Using a Novel    Microfluidic Chip Device
+
+o	Developed a DNA purification protocol using microfluidics and magnetic separation technique 
+
+
