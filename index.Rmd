@@ -10,7 +10,7 @@ output:
 
 #Introduction
 
-Name: Rachel L.
+Name: Rachel Lee
 Email: gl2458@cumc.columbia.edu
-Summary: Biostatistics MPH candidate at Mailman School of Public Health. Interests include data science, statistical inference and analysis. 
+Summary: Biostatistics MPH candidate at Mailman School of Public Health. Interests include data science, statistical inference and analysis. [Linkedin](https://www.linkedin.com/in/rgyl12/)
 
