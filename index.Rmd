@@ -8,7 +8,7 @@ output:
     toc_float: true
 ---
 
-#Introduction
+# Introduction
 
 Name: Rachel Lee
 Email: gl2458@cumc.columbia.edu
