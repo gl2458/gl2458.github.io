@@ -1,0 +1,68 @@
+---
+title: "NOAA Data Set"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(p8105.datasets)
+library(tidyverse)
+library(plotly)
+library(viridis)
+library(forcats)
+```
+
+We will use the NOAA data set.
+
+```{r data_import_tidying}
+set.seed(1)
+ny_noaa_data_tidy_5000 =
+  p8105.datasets::ny_noaa %>% 
+  separate(date, into = c("year", "month", "day"), sep = "-") %>% 
+  mutate(month = as.integer(month), year = as.integer(year), day = as.integer(day), tmin = as.integer(tmin), tmax = as.integer(tmax)) %>% 
+  mutate(month = month.name[month], tmin = tmin / 10, tmax = tmax / 10, prcp = prcp / 10) %>% 
+  filter(!is.na(tmax), !is.na(tmin), !is.na(prcp), !is.na(snow)) %>% 
+  sample_n(5000)
+```
+
+Since the data set is quite huge with 1,417,635 entries, we remove all the NAs from precipitation, minimum temperature and maximum temperature and then take random 5000 samples from it by setting seed as 1.
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Box Plot of tmax through the months
+
+```{r box_plot}
+ny_noaa_data_tidy_5000 %>% 
+  ungroup() %>% 
+  mutate(month = as.factor(month)) %>% 
+  mutate(month = forcats::fct_relevel(month, c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))) %>% 
+  plot_ly(x = ~month, y = ~tmax, color = ~month, type = "box")
+```
+
+### Scatter Plot with tmin vs tmax
+
+```{r scatter_plot}
+ny_noaa_data_tidy_5000 %>% 
+plot_ly(x = ~tmin, y = ~tmax, type = "scatter", mode = "markers",
+          alpha = 0.5, 
+          color = ~year)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Bar Plot of amount of snow fall (mm) per month through the years
+
+```{r bar_plot}
+ny_noaa_data_tidy_5000 %>% 
+  ungroup() %>% 
+  mutate(month = as.factor(month)) %>% 
+  mutate(month = forcats::fct_relevel(month, c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))) %>% 
+  group_by(month) %>% 
+  mutate(monthly_snow = sum(snow)) %>% 
+  plot_ly(x = ~month, y = ~monthly_snow, color = ~month, type = "bar")
+```
