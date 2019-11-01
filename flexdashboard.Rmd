@@ -28,7 +28,7 @@ ny_noaa_data_tidy_5000 =
   sample_n(10000)
 ```
 
-taking a sample of 10,000 to decrease the size of dataset
+using sample size 10,000 to reduce dataset 
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -65,4 +65,9 @@ ny_noaa_data_tidy_5000 %>%
   group_by(month) %>% 
   mutate(monthly_snow = sum(snow)) %>% 
   plot_ly(x = ~month, y = ~monthly_snow, type = "bar")
+```
+
+
+```{r}
+rmarkdown::render("flexdashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
 ```
