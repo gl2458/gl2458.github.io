@@ -64,5 +64,5 @@ ny_noaa_data_tidy_5000 %>%
   mutate(month = forcats::fct_relevel(month, c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))) %>% 
   group_by(month) %>% 
   mutate(monthly_snow = sum(snow)) %>% 
-  plot_ly(x = ~month, y = ~monthly_snow, color = ~month, type = "bar")
+  plot_ly(x = ~month, y = ~monthly_snow, type = "bar")
 ```
