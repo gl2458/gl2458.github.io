@@ -15,7 +15,7 @@ library(viridis)
 library(forcats)
 ```
 
-We will use the NOAA data set.
+NOAA data set.
 
 ```{r data_import_tidying}
 set.seed(1)
